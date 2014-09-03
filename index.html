@@ -13,7 +13,6 @@
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 <link rel="icon" href="/favicon.ico">
-
   </head>
   <body>
     <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
@@ -62,23 +61,26 @@
 
           <div class="row projects-list">
 
-            <h3><a class="anchor" name="projects"></a>Projects</h3>
+            <h4 class="section"><a class="anchor" name="projects"></a>Projects</h4>
 
           </div>
 
           <hr class="dashed" />
 
-          <div class="row members-list">
+          <div class="row">
 
-            <h3><a class="anchor" name="team-members"></a>Team Members</h3>
+            <h4 class="section"><a class="anchor" name="team-members"></a>Team Members</h4>
+
+            <div class="well col-lg-12 col-md-12 col-sm-12 col-xs-12 members-list">
+            </div>
 
           </div>
 
-          <hr class="dashed" />
+          <hr class="row dashed" />
 
-          <div class="row-fluid questions">
+          <div class="row questions">
 
-            <h3><a class="anchor" name="questions"></a>Questions / Bugs</h3>
+            <h4 class="section"><a class="anchor" name="questions"></a>Questions / Bugs</h4>
 
             <p>If you have any questions or find a bug/defect in any of our projects, please submit an issue on GitHub for that repo. Depending on the size and popularity of the project, you may find that there will be more people paying attention and able to help on Stackoverflow. Please use your best judgement.</p>
 
@@ -86,10 +88,10 @@
 
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 sidebar">
           <div class="row-fluid">
             <div class="col-lg-12 col-md-12 col-sm-4">
-              <h4>More of Headspring</h4>
+              <h4 class="section">More of Headspring</h4>
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="http://www.headspring.com">Headspring</a></li>
                 <li><a href="http://www.headspringmobile.com">Headspring Mobile</a></li>
@@ -97,7 +99,7 @@
               </ul>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-4">
-              <h4>Events</h4>
+              <h4 class="section">Events</h4>
               <ul class="nav nav-pills nav-stacked">
                 <li><a href="http://ctxgivecamp.org">Central Texas GiveCamp</a></li>
                 <li><a href="http://houstongivecamp.org/">Houston GiveCamp</a></li>
@@ -120,7 +122,29 @@
   </footer>
 
 <script src="jquery.min.js"></script>
+<script src="jsrender.min.js"></script>
 <script src="bootstrap.min.js"></script>
+<script id="memberTmpl" type="text/x-jsrender">
+<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+  <p class="text-center">
+    <img src="http://www.gravatar.com/avatar/{{>gravatar_id}}" class="img-rounded">
+    <h5 class="text-center"><a href="{{>html_url}}">{{>login}}</a></h5>
+  </p>
+</div>
+</script>
+<script id="projectTmpl" type="text/x-jsrender">
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h5 class="panel-title"><a href="{{>html_url}}">{{>name}}</a></h5></div>
+    <div class="panel-body">
+      <p class="project-desc">{{>description}}</p>
+      <p class="text-right"><span class="badge alert-info">{{>watchers}} people watching</span></p>
+      <p class="text-right"><span class="badge alert-info">{{>open_issues}} open issues</span></p>
+      <p class="text-right"><span class="badge alert-info">{{>forks}} forks</span></p>
+    </div>
+  </div>
+</div>
+</script>
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="https://api.github.com/orgs/headspringlabs/members?callback=Members.load"></script>
 <script type="text/javascript" src="https://api.github.com/orgs/headspringlabs/repos?callback=Repos.load"></script>
