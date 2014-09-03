@@ -1,0 +1,26 @@
+body {
+	padding-top: 85px;
+	padding-bottom: 150px;
+}
+#hero .jumbotron {
+	background-color: #0079c2;
+	background-repeat: no-repeat;
+	color: #eee;
+	text-align: right; 
+}
+#hero .hidden-xs {
+	background-image: url(https://raw.githubusercontent.com/HeadspringLabs/assets/master/logos/headspring-labs-left-logo.png);
+}
+#hero .visible-xs {
+	background-image: url(https://raw.githubusercontent.com/HeadspringLabs/assets/master/logos/headspring-labs-horizontally-stacked-no-bottle.png);
+}
+a.anchor{
+	display: block;
+	position: relative;
+	top: -85px;
+	visibility: hidden;
+}
+.projects-list > div, .members-list > div {
+	display: block;
+	min-height: 160px;
+}
