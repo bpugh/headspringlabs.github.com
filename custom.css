@@ -3,12 +3,12 @@
 		min-height: 240px;
 	}
 	.projects-list .project-desc {
-		min-height: 180px;
+		min-height: 150px;
 	}
 }
 @media (min-width: 768px) and (max-width: 992px) {
 	.projects-list .panel {
-		min-height: 180px;
+		min-height: 150px;
 	}
 	.projects-list .project-desc {
 		min-height: 100px;

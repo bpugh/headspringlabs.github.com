@@ -140,9 +140,14 @@
     <div class="panel-heading"><h5 class="panel-title"><a href="{{>html_url}}">{{>name}}</a></h5></div>
     <div class="panel-body">
       <p class="project-desc">{{>description}}</p>
+      <!--
       <p class="text-right"><span class="badge alert-info">{{>watchers}} people watching</span></p>
-      <p class="text-right"><span class="badge alert-info">{{>open_issues}} open issues</span></p>
-      <p class="text-right"><span class="badge alert-info">{{>forks}} forks</span></p>
+      <p class="text-right"><span class="badge alert-info">{{>open_issues}} open issues</span></p>      
+      <p class="text-right"><span class="badge alert-info">{{>forks}} forks</span></p>-->
+    </div>
+    <div class="panel-footer">
+      <iframe src="http://ghbtns.com/github-btn.html?user={{>owner.login}}&repo={{>name}}&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user={{>owner.login}}&repo={{>name}}&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
     </div>
   </div>
 </div>
