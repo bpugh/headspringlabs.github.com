@@ -1,4 +1,10 @@
 (function ($) {
+	Date.prototype.addDays = function(days) {
+	    var date = new Date(this.valueOf());
+	    date.setDate(date.getDate() + days);
+	    return date;
+	}
+
 	Filter = {
 		Repo: {
 			WhiteList: ['Enumeration', 'Tarantino', 'Naak', 'hsbot', 'HeadspringTime', 'bulk-writer', 'Ferdinand', 'OptionalWCF', 'HeadspringWebAccessibility']
@@ -21,8 +27,7 @@
 		},
 		fetch: function (url, callback) {
 			var today = new Date();
-			var tomorrow = new Date();
-			tomorrow.setDate(today.getDate() + 1);
+			var tomorrow = today.addDays(1);
 
 			var raw = localStorage[url];
 			if (raw) {
