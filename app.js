@@ -11,6 +11,44 @@
 					: (0));
 		}
 	},
+	Cache = {
+		hasLocalStorage: function () {
+			try {
+				return 'localStorage' in window && window['localStorage'] !== null;
+			} catch (e) {
+				return false;
+			}
+		},
+		fetch: function (url, callback) {
+			var today = new Date();
+			var tomorrow = new Date();
+			tomorrow.setDate(today.getDate() + 1);
+
+			var raw = localStorage[url];
+			if (raw) {
+				var value = JSON.parse(raw);
+				if (value.expires < today) {
+					console.log('expired, refreshing');
+					$.getJSON(url, function (data) {
+						value.data = data;
+						value.expires = tomorrow;
+						return callback(value);
+					});
+				} else {
+					return callback(value);
+				}
+			} else {
+				$.getJSON(url, function (data) {
+					var value = {
+						data: data,
+						expires: tomorrow,
+					};
+					localStorage[url] = JSON.stringify(value);
+					return callback(value);
+				});
+			}
+		}
+	},
 	Template = {
 		Member: $.templates('#memberTmpl'),
 		Repo: $.templates('#projectTmpl')
@@ -35,4 +73,10 @@
 			});
 		}
 	}
+
+	$(function () {
+		Cache.fetch('https://api.github.com/organizations/1236851/members?page=1', Members.load);
+		Cache.fetch('https://api.github.com/organizations/1236851/members?page=2', Members.load);
+		Cache.fetch('https://api.github.com/orgs/headspringlabs/repos', Repos.load);
+	})
 })(jQuery);
