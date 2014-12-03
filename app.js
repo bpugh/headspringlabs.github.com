@@ -5,6 +5,24 @@
 	    return date;
 	}
 
+	Blogs = {
+		scichelli: { feed: 'http://feeds.feedburner.com/lostechies/gwc' },
+		ChrisMissal: { feed: 'http://feeds.feedburner.com/ChrisMissalsBlog' },
+		load: function (payload) {
+			BlogFeed = payload.responseData.feed.entries;
+		},
+		applyBlogEntries: function (member, complete) {
+			var hasBlog = !!Blogs[member.login];
+			if (!hasBlog) {
+				complete();
+				return;
+			}
+			$.getScript('http://ajax.googleapis.com/ajax/services/feed/load?callback=Blogs.load&v=1.0&num=5&q=' + encodeURI(Blogs[member.login].feed), function () {
+				member.Blogs = BlogFeed;
+				complete();
+			});
+		}
+	},
 	Filter = {
 		Repo: {
 			WhiteList: ['Enumeration', 'Tarantino', 'Naak', 'hsbot', 'HeadspringTime', 'bulk-writer', 'Ferdinand', 'OptionalWCF', 'HeadspringWebAccessibility']
@@ -62,8 +80,10 @@
 		load: function (payload) {
 			var memberBox = $('.members-list');
 			$.each(payload.data, function (index, member) {
-				var content = Template.Member.render(member);
-				memberBox.append(content);
+				Blogs.applyBlogEntries(member, function () {
+					var content = Template.Member.render(member);
+					memberBox.append(content);
+				});
 			});
 		}
 	},
@@ -82,6 +102,7 @@
 	$(function () {
 		Cache.fetch('https://api.github.com/organizations/1236851/members?page=1', Members.load);
 		Cache.fetch('https://api.github.com/organizations/1236851/members?page=2', Members.load);
-		Cache.fetch('https://api.github.com/orgs/headspringlabs/repos', Repos.load);
+		Cache.fetch('https://api.github.com/organizations/1236851/repos', Repos.load);
 	})
 })(jQuery);
+
