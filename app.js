@@ -10,6 +10,7 @@
 		ChrisMissal: { feed: 'http://feeds.feedburner.com/ChrisMissalsBlog' },
 		seanbiefeld: { feed: 'http://lostechies.com/seanbiefeld/feed/' },
 		ryanande: { feed: 'http://www.flapstack.com/rss/' },
+		plioi: { feed: 'http://lostechies.com/patricklioi/feed/' },
 		load: function (payload) {
 			BlogFeed = payload.responseData.feed.entries;
 		},
