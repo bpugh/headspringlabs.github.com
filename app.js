@@ -12,6 +12,9 @@
 		ryanande: { feed: 'http://www.flapstack.com/rss/' },
 		plioi: { feed: 'http://lostechies.com/patricklioi/feed/' },
 		gbHeadspring: { feed: 'http://glennburnside.com/rss' },
+		davidsavagejr: { feed: 'http://kemahshore.com/atom.xml' },
+		pmcvtm: { feed: 'http://loudandabrasive.com/rss/' },
+		derans: { feed: 'http://feeds.feedburner.com/derans' },
 		load: function (payload) {
 			BlogFeed = payload.responseData.feed.entries;
 		},
