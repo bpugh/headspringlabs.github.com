@@ -8,6 +8,8 @@
 	Blogs = {
 		scichelli: { feed: 'http://feeds.feedburner.com/lostechies/gwc' },
 		ChrisMissal: { feed: 'http://feeds.feedburner.com/ChrisMissalsBlog' },
+		seanbiefeld: { feed: 'http://lostechies.com/seanbiefeld/feed/' },
+		ryanande: { feed: 'http://www.flapstack.com/rss/' },
 		load: function (payload) {
 			BlogFeed = payload.responseData.feed.entries;
 		},
