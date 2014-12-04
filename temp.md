@@ -182,7 +182,6 @@ blogs:
   </footer>
 
 <script src="jquery.min.js"></script>
-<!--<script src="jsrender.min.js"></script>-->
 <script src="bootstrap.min.js"></script>
 <script type="text/javascript" src="blogs.js"></script>
   </body>
