@@ -10,7 +10,15 @@ featured:
   - OptionalWCF
   - HeadspringWebAccessibility
 blogs:
+  - scichelli: http://feeds.feedburner.com/lostechies/gwc
   - ChrisMissal: http://feeds.feedburner.com/ChrisMissalsBlog
+  - seanbiefeld: http://lostechies.com/seanbiefeld/feed/
+  - ryanande: http://www.flapstack.com/rss/
+  - plioi: http://lostechies.com/patricklioi/feed/
+  - gbHeadspring: http://glennburnside.com/rss
+  - davidsavagejr: http://kemahshore.com/atom.xml
+  - pmcvtm: http://loudandabrasive.com/rss/
+  - derans: http://feeds.feedburner.com/derans
 ---
 
 <head>
