@@ -19,6 +19,7 @@ blogs:
   - davidsavagejr: http://kemahshore.com/atom.xml
   - pmcvtm: http://loudandabrasive.com/rss/
   - derans: http://feeds.feedburner.com/derans
+  - jbogard: http://feeds.feedburner.com/GrabBagOfT
 ---
 
 <head>
