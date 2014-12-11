@@ -27,7 +27,7 @@ blogs:
     <meta name="description" content="Headspring Labs"/>
     <meta name="author" content="Headspring"/>
 
-    <title></title>
+    <title>Headspring Labs</title>
 
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
