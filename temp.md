@@ -29,7 +29,7 @@ blogs:
 
     <title>Headspring Labs</title>
 
-    <link rel="stylesheet" href="dist/vendor.css">
+    <link rel="stylesheet" href="static/vendor.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" type="text/css"/>
 
     <!--[if lt IE 9]>
@@ -286,6 +286,6 @@ blogs:
 {% endfor %}
 
 <!-- Javascripts -->
-<script src="dist/vendor.js"></script>
-<script src="dist/app.js"></script>
+<script src="static/vendor.js"></script>
+<script src="static/app.js"></script>
 </body>
