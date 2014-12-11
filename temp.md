@@ -185,44 +185,13 @@ blogs:
         <div class="row">
             <div class="col-md-12">
                 <div class="customer-slider">
+                {% for member in site.github.organization_members %}
                     <div class="item">
-                        <a href="#" data-toggle="modal" data-target="#CedricYao-Modal">
-                            <img src="https://avatars.githubusercontent.com/u/200011?v=3&s=100" alt="CedricYao">
+                        <a href="#" data-toggle="modal" data-target="#{{ member.login }}-Modal">
+                            <img src="{{ member.avatar_url }}&amp;s=100" alt="{{ member.login }}">
                         </a>
                     </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/67798?v=3&s=100" alt="ChrisMissal">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/379778?v=3&s=100" alt="StrykerNinja">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/214758?v=3&s=100" alt="ajepst">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/7843777?v=3&s=100" alt="allenpiscitello">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/98739?v=3&s=100" alt="alonsorobles">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/1622154?v=3&s=100" alt="bardoloi">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/684781?v=3&s=100" alt="bpugh">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/7063113?v=3&s=100" alt="cjlaw">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/8715580?v=3&s=100" alt="claudia9love">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/6456463?v=3&s=100" alt="daneSchilling">
-                    </div>
-                    <div class="item">
-                        <img src="https://avatars.githubusercontent.com/u/1714830?v=3&s=100" alt="davidsavagejr">
-                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>
@@ -251,7 +220,7 @@ blogs:
                         <a href="http://www.headspring.com/">Headspring.com</a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="http://www.headspring.com/careers">
                             Jobs
                             <span class="jobs">We're hiring!</span>
                         </a>
@@ -293,34 +262,36 @@ blogs:
 </footer>
 <!-- end footer section -->
 
-<div class="modal fade headspringer-modal" id="CedricYao-Modal" tabindex="-1" role="dialog" aria-labelledby="CedricYao-Modal-Label" aria-hidden="true">
+{% for member in site.github.organization_members %}
+<div class="modal fade headspringer-modal" id="{{ member.login }}-Modal" tabindex="-1" role="dialog" aria-labelledby="{{ member.login }}-Modal-Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <div class="avatar-container">
-                    <img src="https://avatars.githubusercontent.com/u/200011?v=3&s=200" alt="CedricYao" />
+                    <img src="{{ member.avatar_url }}&amp;s=200" alt="{{ member.login }}" />
                 </div>
             </div>
             <div class="modal-body">
                 <h4>Links</h4>
                 <ul>
                     <li>
-                        <a href="#">GitHub Profile</a>
+                        <a href="{{ member.html_url }}">GitHub Profile</a>
                     </li>
                 </ul>
+                {% for blog in page.blogs %}
+                {% assign feed = blog[member.login] %}
+                {% if feed != nil %}
                 <h4>Recent Blog Posts</h4>
-                <ul>
-                    <li>AutoMapper 3.3 released</li>
-                    <li>Mobile authentication with Xamarin.Auth and refresh tokens</li>
-                    <li>Dealing with the linker in Xamarin apps</li>
-                    <li>Azure Mobile Services with AutoMapper</li>
-                    <li>Comparing processing times of NServiceBus saga patterns</li>
+                <ul data-blogfeed="{{ feed }}">
                 </ul>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
+{% endfor %}
 
 <!-- Javascripts -->
 <script src="static/script/jquery-1.11.1.js"></script>
