@@ -305,4 +305,5 @@ blogs:
 <script src="static/script/wow.min.js"></script>
 <script src="static/script/jquery.jigowatt.js"></script>
 <script src="static/script/main.js"></script>
+<script src="static/script/app/blogs.js"></script>
 </body>
