@@ -188,7 +188,7 @@ blogs:
                 {% for member in site.github.organization_members %}
                     <div class="item">
                         <a href="#" data-toggle="modal" data-target="#{{ member.login }}-Modal">
-                            <img src="{{ member.avatar_url }}&amp;s=100" alt="{{ member.login }}">
+                            <img src="{{ member.avatar_url }}&amp;s=100" alt="{{ member.login }}" width="100" />
                         </a>
                     </div>
                 {% endfor %}
@@ -269,7 +269,7 @@ blogs:
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <div class="avatar-container">
-                    <img src="{{ member.avatar_url }}&amp;s=200" alt="{{ member.login }}" />
+                    <img src="{{ member.avatar_url }}&amp;s=200" alt="{{ member.login }}" width="200" />
                 </div>
             </div>
             <div class="modal-body">
