@@ -129,170 +129,31 @@ blogs:
         </div>
 
         <div class="row">
+
+            {% for repo in site.github.public_repositories %}
+            {% if page.featured contains repo.name %}
+
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/bulk-writer">bulk-writer</a>
+                        <h5 class="panel-title"><a href="{{ repo.html_url }}">{{ repo.name }}</a>
                         </h5>
                     </div>
                     <div class="panel-body">
-                        <p class="project-desc">Provides guidance for fast ETL jobs, an IDataReader implementation for
-                            SqlBulkCopy (or the MySql or Oracle equivalents) that wraps an IEnumerable, and libraries
-                            for mapping entites to table columns.</p>
+                        <p class="project-desc">{{ repo.description }}</p>
                     </div>
                     <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=bulk-writer&amp;type=watch&amp;count=true"
+                        <iframe src="http://ghbtns.com/github-btn.html?user={{ repo.owner.login }}&amp;repo={{ repo.name }}&amp;type=watch&amp;count=true"
                                 allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=bulk-writer&amp;type=fork&amp;count=true"
+                        <iframe src="http://ghbtns.com/github-btn.html?user={{ repo.owner.login }}&amp;repo={{ repo.name }}&amp;type=fork&amp;count=true"
                                 allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/Enumeration">Enumeration</a>
-                        </h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">A utility class. Common uses include Java-like enumerations, dispatch
-                            table, flyweight, and drop-down list items/select options. No third-party dependencies.</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Enumeration&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Enumeration&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
+            {% endif %}
+            {% endfor %}
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/Ferdinand">Ferdinand</a></h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">Ferdinand explores your project dependencies for interesting data.</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Ferdinand&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Ferdinand&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/HeadspringTime">HeadspringTime</a>
-                        </h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">A lightweight implementation of SystemClock that will help make your
-                            applications more testable when dealing with dates and times.</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=HeadspringTime&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=HeadspringTime&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/HeadspringWebAccessibility">HeadspringWebAccessibility</a>
-                        </h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">Making a site accessible is intended to make your site useable by the
-                            broadest set of users possible.</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=HeadspringWebAccessibility&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=HeadspringWebAccessibility&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/hsbot">hsbot</a></h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">Headspring's Hipchat Hubot</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=hsbot&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=hsbot&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/Naak">Naak</a></h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">The .NET Accessibility Analysis Kit (NAAK) is designed to allow
-                            compliance with the US Rehabilitation Act, Section 508.</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Naak&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Naak&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/OptionalWCF">OptionalWCF</a>
-                        </h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">WCF IOC Away the need for Named Pipes</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=OptionalWCF&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=OptionalWCF&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><a href="https://github.com/HeadspringLabs/Tarantino">Tarantino</a></h5>
-                    </div>
-                    <div class="panel-body">
-                        <p class="project-desc">The Tarantino project is a collection of libraries and tools to
-                            facilitate change management and development.</p>
-                    </div>
-                    <div class="panel-footer">
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Tarantino&amp;type=watch&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                        <iframe src="http://ghbtns.com/github-btn.html?user=HeadspringLabs&amp;repo=Tarantino&amp;type=fork&amp;count=true"
-                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
