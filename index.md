@@ -19,178 +19,273 @@ blogs:
   - davidsavagejr: http://kemahshore.com/atom.xml
   - pmcvtm: http://loudandabrasive.com/rss/
   - derans: http://feeds.feedburner.com/derans
-  - jbogard: http://feeds.feedburner.com/GrabBagOfT
 ---
 
 <head>
-<!-- Meta, title, CSS, favicons, etc. -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Headspring Labs"/>
+    <meta name="author" content="Headspring"/>
 
-<title>Headspring Labs</title>
-<link href="bootstrap.min.css" rel="stylesheet">
-<link href="custom.css" rel="stylesheet">
+    <title>Headspring Labs</title>
 
-<!-- Favicons -->
-<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
-<link rel="icon" href="favicon.ico">
-  </head>
-  <body>
-    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+    <link rel="stylesheet" href="static/dist/vendor.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" type="text/css"/>
 
-    <!-- Docs master nav -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">Headspring Labs</a>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- begin preloader -->
+<div class="preloader">
+    <div class="preloader-content-wrapper">
+        <div class="preloader-content">
+            <i class="fa fa-cog fa-3x fa-spin"></i>
+        </div>
     </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#team-members">Team Members</a>
-        </li>
-        <li>
-          <a href="#questions">Questions / Bugs</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</nav>
+</div>
+<!-- end preloader -->
 
+<!-- begin nav -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span>Menu</span>
+            </button>
+            <!-- begin logo in navigation -->
+            <a class="navbar-brand" href="#intro">
+                <img src="static/images/footer-logo.png" alt="logo small">
+            </a>
+            <!-- end logo in navigation -->
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <!-- begin navigation items -->
+                <li class="current"><a href="#intro">Start</a></li>
+                <li><a href="#features">Open source</a></li>
+                <li><a href="#newsletter">Questions &amp; bugs</a></li>
+                <li><a href="#customers">Team members</a></li>
+                <!-- end navigation items -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- end nav -->
+
+<!-- begin intro section -->
+<section class="intro" id="intro">
 
     <div class="container">
+        <div class="row">
 
-      <div class="row-fluid" id="hero">
-        <div class="jumbotron hidden-xs">
-          We build software that transforms organizations
-        </div>
-        <div class="jumbotron visible-xs">
-        </div>
-      </div>
+            <div class="col-md-12">
+                <div class="intro-section">
+                    <!-- begin logo intro section -->
+                    <img src="static/images/hs-labs-logo-2.png" class="logo" alt="logo">
+                    <!-- end logo intro section -->
+                    <h1>We build software<br/>that transforms organizations</h1>
 
-      <div class="row-fluid">
-        <div class="col-md-9" role="main">
-          <div class="row projects-list">
-            <h4 class="section"><a class="anchor" name="projects"></a>Projects</h4>
+                    <a href="#" class="mouse">
+                        <i class="fa fa-angle-down Drop animated"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <span class="mouse"></span>
+
+</section>
+<!-- end intro section -->
+
+<!-- begin features section -->
+<section class="features" id="features">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-head">
+                    <h1>Open source</h1>
+
+                    <p>We build stuff. And then share it with you.</p>
+                    <span class="underline"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
             {% for repo in site.github.public_repositories %}
             {% if page.featured contains repo.name %}
-			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-			  <div class="panel panel-default">
-			    <div class="panel-heading"><h5 class="panel-title"><a href="{{ repo.html_url }}">{{ repo.name }}</a></h5></div>
-			    <div class="panel-body">
-			      <p class="project-desc">{{ repo.description }}</p>
-			    </div>
-			    <div class="panel-footer">
-			      <iframe src="http://ghbtns.com/github-btn.html?user={{ repo.owner.login }}&amp;repo={{ repo.name }}&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-			      <iframe src="http://ghbtns.com/github-btn.html?user={{ repo.owner.login }}&amp;repo={{ repo.name }}&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-			    </div>
-			  </div>
-			</div>
-			{% endif %}
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"><a href="{{ repo.html_url }}">{{ repo.name }}</a>
+                        </h5>
+                    </div>
+                    <div class="panel-body">
+                        <p class="project-desc">{{ repo.description }}</p>
+                    </div>
+                    <div class="panel-footer">
+                        <iframe src="http://ghbtns.com/github-btn.html?user={{ repo.owner.login }}&amp;repo={{ repo.name }}&amp;type=watch&amp;count=true"
+                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                        <iframe src="http://ghbtns.com/github-btn.html?user={{ repo.owner.login }}&amp;repo={{ repo.name }}&amp;type=fork&amp;count=true"
+                                allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
             {% endfor %}
-          </div>
-
-          <hr class="dashed" />
-
-          <div class="row">
-            <h4 class="section"><a class="anchor" name="team-members"></a>Team Members</h4>
-            <div class="well col-lg-12 col-md-12 col-sm-12 col-xs-12 members-list">
-              {% for member in site.github.organization_members %}
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 member" id="member-{{ member.login }}" data-member-name="{{ member.login }}">
-				  <p class="text-center clickable-member" data-toggle="modal" data-target="#modal-{{ member.login }}">
-				    <img src="{{ member.avatar_url }}&amp;s=100" class="img-rounded" width="100" />
-				    <p>{{ member.login }}</p>
-				  </p>
-				  <div id="modal-{{ member.login }}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="modal-{{ member.login }}-label">
-				    <div class="modal-dialog">
-				      <div class="modal-content">
-				        <div class="modal-header">
-				          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				          <h4 class="modal-title" id="modal-{{ member.login }}-label">{{ member.login }}</h4>
-				        </div>
-				        <div class="row modal-body">
-				          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				            <img src="{{ member.avatar_url }}&amp;s=200" class="img-rounded" width="200" />
-				          </div>
-				          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				            <h5>Links</h5>
-				            <ul>
-				              <li><a href="{{ member.html_url }}">GitHub Profile</a></li>
-				            </ul>
-				            {% for blog in page.blogs %}
-				            {% assign feed = blog[member.login] %}
-				            {% if feed != nil %}
-				            <h5>Recent Blog Posts</h5>
-				            <ul data-blogfeed="{{ feed }}">
-				            </ul>
-				            {% endif %}
-				            {% endfor %}
-				          </div>
-				        </div>
-				        <div class="modal-footer">
-				          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        </div>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-              {% endfor %}
-            </div>
-          </div>
-
-          <hr class="row dashed" />
-
-          <div class="row questions">
-            <h4 class="section"><a class="anchor" name="questions"></a>Questions / Bugs</h4>
-            <p>If you have any questions or find a bug/defect in any of our projects, please submit an issue on GitHub for that repo. Depending on the size and popularity of the project, you may find that there will be more people paying attention and able to help on Stackoverflow. Please use your best judgement.</p>
-          </div>
 
         </div>
-
-        <div class="col-md-3 sidebar">
-          <div class="row-fluid">
-            <div class="col-lg-12 col-md-12 col-sm-4">
-              <h4 class="section">More of Headspring</h4>
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="http://www.headspring.com">Headspring</a></li>
-                <li><a href="http://www.twitter.com/Headspring">Headspring Twitter</a></li>
-                <li><a href="http://www.twitter.com/HeadspringLabs">Headspring Labs Twitter</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-4">
-              <h4 class="section">Events</h4>
-              <ul class="nav nav-pills nav-stacked">
-                <li><a href="http://austingivecamp.org">Austin GiveCamp</a></li>
-                <li><a href="http://houstongivecamp.org/">Houston GiveCamp</a></li>
-                <li><a href="http://codecamp14.adnug.org/">Austin Code Camp</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <hr class="dashed" />
+</section>
+<!-- end features section -->
 
-  <footer role="contentinfo">
+<!-- begin newsletter section -->
+<section class="newsletter" id="newsletter">
     <div class="container">
-      <div class="row-fluid">
-        <p>Copyright © 2014 Headspring Labs</p>
-      </div>
-    </div>
-  </footer>
 
-<script src="jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
-<script type="text/javascript" src="blogs.js"></script>
-  </body>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-head">
+                    <h1>Questions &amp; bugs</h1>
+
+                    <p style="margin-top: 20px;">If you have any questions or find a bug in any of our projects, please submit an issue on GitHub for that repo.</p>
+                    <span class="underline"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end newsletter section -->
+
+<!-- begin customer section -->
+<section class="customers" id="customers">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="customer-slider">
+                {% for member in site.github.organization_members %}
+                    <div class="item">
+                        <a href="#" data-toggle="modal" data-target="#{{ member.login }}-Modal">
+                            <img src="{{ member.avatar_url }}&amp;s=100" alt="{{ member.login }}" width="100" />
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end customer section -->
+
+<!-- begin footer section -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-3">
+                <!-- begin logo footer -->
+                <img src="static/images/footer-logo.png" alt="footer logo">
+                <!-- end logo footer -->
+                <p>
+                    We build software that transforms organizations.
+                </p>
+            </div>
+
+            <div class="col-md-2 col-sm-3">
+                <h4>More Headspring</h4>
+                <div class="underline-small"></div>
+                <ul>
+                    <li>
+                        <a href="http://www.headspring.com/">Headspring.com</a>
+                    </li>
+                    <li>
+                        <a href="http://www.headspring.com/careers">
+                            Jobs
+                            <span class="jobs">We're hiring!</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.twitter.com/Headspring">Headspring Twitter</a>
+                    </li>
+                    <li>
+                        <a href="http://www.twitter.com/HeadspringLabs">Headspring Labs Twitter</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-md-offset-1 col-sm-3">
+                <h4>Events</h4>
+                <div class="underline-small"></div>
+                <ul>
+                    <li>
+                        <a href="http://austingivecamp.org/">Austin GiveCamp</a>
+                    </li>
+                    <li>
+                        <a href="http://houstongivecamp.org/">Houston GiveCamp</a>
+                    </li>
+                    <li>
+                        <a href="http://codecamp14.adnug.org/">Austin Code Camp</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p><small>Copyright &copy; 2014 Headspring Labs</small></p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- end footer section -->
+
+{% for member in site.github.organization_members %}
+<div class="modal fade headspringer-modal" id="{{ member.login }}-Modal" tabindex="-1" role="dialog" aria-labelledby="{{ member.login }}-Modal-Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div class="avatar-container">
+                    <img src="{{ member.avatar_url }}&amp;s=200" alt="{{ member.login }}" width="200" />
+                </div>
+            </div>
+            <div class="modal-body">
+                <h4>Links</h4>
+                <ul>
+                    <li>
+                        <a href="{{ member.html_url }}">GitHub Profile</a>
+                    </li>
+                </ul>
+                {% for blog in page.blogs %}
+                {% assign feed = blog[member.login] %}
+                {% if feed != nil %}
+                <h4>Recent Blog Posts</h4>
+                <ul data-blogfeed="{{ feed }}">
+                </ul>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<!-- Javascripts -->
+<script src="static/dist/vendor.js"></script>
+<script src="static/dist/app.js"></script>
+</body>
