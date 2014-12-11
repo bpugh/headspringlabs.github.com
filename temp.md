@@ -29,15 +29,7 @@ blogs:
 
     <title>Headspring Labs</title>
 
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="static/css/owl.theme.css">
-    <link rel="stylesheet" href="static/css/owl.carousel.css">
-    <link rel="stylesheet" href="static/css/nivo-theme.css">
-    <link rel="stylesheet" href="static/css/nivo-lightbox.css">
-    <link rel="stylesheet" href="static/css/style_light.css">
-    <link rel="stylesheet" href="static/css/responsive.css">
-    <link rel="stylesheet" href="static/css/color.css">
+    <link rel="stylesheet" href="dist/vendor.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" type="text/css"/>
 
     <!--[if lt IE 9]>
@@ -294,16 +286,6 @@ blogs:
 {% endfor %}
 
 <!-- Javascripts -->
-<script src="static/script/jquery-1.11.1.js"></script>
-<script src="static/script/bootstrap.min.js"></script>
-<script src="static/script/owl.carousel.min.js"></script>
-<script src="static/script/jquery.fitvids.js"></script>
-<script src="static/script/smoothScroll.js"></script>
-<script src="static/script/nivo-lightbox.min.js"></script>
-<script src="static/script/jquery.scrollTo.js"></script>
-<script src="static/script/jquery.nav.js"></script>
-<script src="static/script/wow.min.js"></script>
-<script src="static/script/jquery.jigowatt.js"></script>
-<script src="static/script/main.js"></script>
-<script src="static/script/app/blogs.js"></script>
+<script src="dist/vendor.js"></script>
+<script src="dist/app.js"></script>
 </body>
