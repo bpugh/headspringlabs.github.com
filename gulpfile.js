@@ -17,7 +17,7 @@ gulp.task('vendor-css', function() {
 });
 
 gulp.task('vendor-js', function() {  
-  return gulp.src('./static/script/vendor/*.js')
+  return gulp.src(['./static/script/vendor/jquery*.js','./static/script/vendor/*.js'])
     .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/'))
