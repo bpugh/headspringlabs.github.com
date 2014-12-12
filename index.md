@@ -233,7 +233,7 @@ blogs:
 <!-- end footer section -->
 
 {% for member in site.github.organization_members %}
-<div class="modal fade headspringer-modal" id="{{ member.login }}-Modal" tabindex="-1" role="dialog" aria-labelledby="{{ member.login }}-Modal-Label" aria-hidden="true">
+<div class="modal fade headspringer-modal" id="{{ member.login }}-Modal" tabindex="-1" role="dialog" aria-labelledby="{{ member.login }}-Modal-Label" aria-hidden="true" data-member-login="{{ member.login }}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
