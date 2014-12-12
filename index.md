@@ -238,6 +238,7 @@ blogs:
                 <div class="avatar-container">
                     <img src="{{ member.avatar_url }}&amp;s=200" alt="{{ member.login }}" width="200" />
                 </div>
+                <h4 class="modal-title">{{ member.login }}</h4>
             </div>
             <div class="modal-body">
                 <h4>Links</h4>
