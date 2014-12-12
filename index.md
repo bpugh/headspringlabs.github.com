@@ -26,12 +26,9 @@ blogs:
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Headspring Labs"/>
     <meta name="author" content="Headspring"/>
-
     <title>Headspring Labs</title>
-
     <link rel="stylesheet" href="static/dist/vendor.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" type="text/css"/>
-
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -62,7 +59,6 @@ blogs:
             </a>
             <!-- end logo in navigation -->
         </div>
-
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
                 <!-- begin navigation items -->
@@ -79,27 +75,21 @@ blogs:
 
 <!-- begin intro section -->
 <section class="intro" id="intro">
-
     <div class="container">
         <div class="row">
-
             <div class="col-md-12">
                 <div class="intro-section">
                     <!-- begin logo intro section -->
                     <img src="static/images/hs-labs-logo-2.png" class="logo" alt="logo">
                     <!-- end logo intro section -->
                     <h1>We build software<br/>that transforms organizations</h1>
-
                     <a href="#" class="mouse">
                         <i class="fa fa-angle-down Drop animated"></i>
                     </a>
-
                 </div>
             </div>
-
         </div>
     </div>
-
     <span class="mouse"></span>
 
 </section>
@@ -107,24 +97,19 @@ blogs:
 
 <!-- begin features section -->
 <section class="features" id="features">
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-head">
                     <h1>Open source</h1>
-
                     <p>We build stuff. And then share it with you.</p>
                     <span class="underline"></span>
                 </div>
             </div>
         </div>
-
         <div class="row">
-
             {% for repo in site.github.public_repositories %}
             {% if page.featured contains repo.name %}
-
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -142,10 +127,8 @@ blogs:
                     </div>
                 </div>
             </div>
-
             {% endif %}
             {% endfor %}
-
         </div>
     </div>
 
@@ -155,18 +138,15 @@ blogs:
 <!-- begin newsletter section -->
 <section class="newsletter" id="newsletter">
     <div class="container">
-
         <div class="row">
             <div class="col-md-12">
                 <div class="section-head">
                     <h1>Questions &amp; bugs</h1>
-
                     <p style="margin-top: 20px;">If you have any questions or find a bug in any of our projects, please submit an issue on GitHub for that repo.</p>
                     <span class="underline"></span>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 <!-- end newsletter section -->
@@ -203,7 +183,6 @@ blogs:
                     We build software that transforms organizations.
                 </p>
             </div>
-
             <div class="col-md-2 col-sm-3">
                 <h4>More Headspring</h4>
                 <div class="underline-small"></div>
@@ -225,7 +204,6 @@ blogs:
                     </li>
                 </ul>
             </div>
-
             <div class="col-md-2 col-md-offset-1 col-sm-3">
                 <h4>Events</h4>
                 <div class="underline-small"></div>
@@ -241,15 +219,12 @@ blogs:
                     </li>
                 </ul>
             </div>
-
         </div>
-
         <div class="row">
             <div class="col-md-12 text-center">
                 <p><small>Copyright &copy; 2014 Headspring Labs</small></p>
             </div>
         </div>
-
     </div>
 </footer>
 <!-- end footer section -->
