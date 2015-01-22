@@ -1,7 +1,6 @@
 ---
 featured:
   - Enumeration
-  - Tarantino
   - Naak
   - hsbot
   - HeadspringTime
@@ -160,6 +159,21 @@ blogs:
                     <div class="panel-footer">
                         <iframe src="http://ghbtns.com/github-btn.html?user=fixie&amp;repo=fixie&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
                         <iframe src="http://ghbtns.com/github-btn.html?user=fixie&amp;repo=fixie&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"><a href="https://github.com/jbogard/mediatr">MediatR</a>
+                        </h5>
+                    </div>
+                    <div class="panel-body">
+                        <p class="project-desc">Simple, unambitious mediator implementation in .NET</p>
+                    </div>
+                    <div class="panel-footer">
+                        <iframe src="http://ghbtns.com/github-btn.html?user=jbogard&amp;repo=mediatr&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                        <iframe src="http://ghbtns.com/github-btn.html?user=jbogard&amp;repo=mediatr&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
                     </div>
                 </div>
             </div>
