@@ -8,7 +8,6 @@ featured:
   - bulk-writer
   - Ferdinand
   - OptionalWCF
-  - HeadspringWebAccessibility
 blogs:
   - scichelli: http://feeds.feedburner.com/lostechies/gwc
   - ChrisMissal: http://feeds.feedburner.com/ChrisMissalsBlog
@@ -117,6 +116,21 @@ blogs:
             </div>
         </div>
         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"><a href="https://github.com/AutoMapper/AutoMapper">AutoMapper</a>
+                        </h5>
+                    </div>
+                    <div class="panel-body">
+                        <p class="project-desc">A convention-based object-object mapper in .NET.</p>
+                    </div>
+                    <div class="panel-footer">
+                        <iframe src="http://ghbtns.com/github-btn.html?user=AutoMapper&amp;repo=AutoMapper&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                        <iframe src="http://ghbtns.com/github-btn.html?user=AutoMapper&amp;repo=AutoMapper&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                    </div>
+                </div>
+            </div>
             {% for repo in site.github.public_repositories %}
             {% if page.featured contains repo.name %}
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 project-item">
