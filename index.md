@@ -123,6 +123,7 @@ blogs:
                     </div>
                     <div class="panel-body">
                         <p class="project-desc">A convention-based object-object mapper in .NET.</p>
+                        <p class="project-link"><a href="http://automapper.org/">http://automapper.org/</a></p>
                     </div>
                     <div class="panel-footer">
                         <iframe src="http://ghbtns.com/github-btn.html?user=AutoMapper&amp;repo=AutoMapper&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
@@ -138,6 +139,7 @@ blogs:
                     </div>
                     <div class="panel-body">
                         <p class="project-desc">Conventional Testing for .NET</p>
+                        <p class="project-link"><a href="http://fixie.github.io/">http://fixie.github.io/</a></p>
                     </div>
                     <div class="panel-footer">
                         <iframe src="http://ghbtns.com/github-btn.html?user=fixie&amp;repo=fixie&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
